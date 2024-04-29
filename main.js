@@ -3,7 +3,6 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const Entry = require('./model/model');
 const path = require('path');
-
 const app = express();
 const port = 3000;
 
@@ -24,7 +23,7 @@ app.get('/', async (req, res) => {
     const dataArray = Object.values(data);
 
     // Extract relevant fields and save to the database
-    const top10Results = dataArray.slice(0, 10).map(result => ({
+    const top10Results = dataArray.slice(0, 11).map(result => ({
       name: result.name,
       last: result.last,
       buy: result.buy,
